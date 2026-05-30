@@ -1,0 +1,211 @@
+Project Title: AI-Powered Cloud-Based E-Commerce Platform
+
+Develop a full-stack Cloud-Based E-Commerce Platform using Java Spring Boot as the backend and React.js as the frontend. The application should be scalable, secure, cloud-native, and integrated with AI-powered features.
+
+Backend Requirements:
+
+* Java 17
+* Spring Boot
+* Spring Security with JWT Authentication
+* Spring Data JPA
+* Hibernate
+* Maven
+* REST APIs
+* MySQL hosted on AWS RDS
+
+Frontend Requirements:
+
+* React.js
+* Bootstrap or Material UI
+* Responsive Design
+* Modern E-Commerce UI
+
+Cloud Infrastructure:
+
+* AWS EC2 for hosting the Spring Boot application
+* AWS RDS (MySQL) for storing application data
+* AWS S3 for storing product images, invoices, reports, and documents
+* AWS SNS for notifications and alerts
+
+Core Features:
+
+1. Authentication & Authorization
+
+* User Registration
+* Login/Logout
+* JWT Authentication
+* Role-Based Access Control
+* Customer and Admin Roles
+
+2. Product Catalog
+
+* Product Listing
+* Categories
+* Search Products
+* Filter Products
+* Product Details
+* Product Reviews and Ratings
+
+3. Shopping Cart
+
+* Add to Cart
+* Remove from Cart
+* Update Quantity
+* Save Cart
+
+4. Order Management
+
+* Place Orders
+* Order History
+* Order Tracking
+* Cancel Orders
+* Return Requests
+
+5. Payment Integration
+
+* Razorpay or Stripe Integration
+* Payment Success/Failure Handling
+* Invoice Generation
+
+6. Inventory Management
+
+* Stock Tracking
+* Inventory Updates
+* Low Stock Detection
+* Automatic Inventory Adjustment
+
+7. Cloud Storage
+
+* Upload Product Images to AWS S3
+* Store Invoices in AWS S3
+* Store Reports in AWS S3
+
+8. Notifications
+
+* AWS SNS Integration
+* Order Confirmation
+* Shipping Updates
+* Delivery Notifications
+* Promotional Messages
+* Low Stock Alerts
+
+AI Features:
+
+1. AI Shopping Assistant
+
+* Floating chatbot positioned at the bottom-right corner of every page
+* Available on Home, Product, Cart, and Order pages
+* Conversational interface
+
+2. AI Product Recommendation Engine
+
+* Recommend products based on browsing history
+* Recommend products based on cart items
+* Suggest related products
+* Personalized shopping experience
+
+3. AI Product Search
+
+* Natural language search
+* Example:
+  "Show me gaming laptops under ₹80,000"
+  "Suggest a mobile phone with a good camera"
+
+4. AI Customer Support
+
+* Answer product-related questions
+* Explain return policies
+* Help users track orders
+* Provide FAQ support
+
+5. AI Review Analysis
+
+* Analyze customer reviews
+* Generate product sentiment summaries
+* Display Positive, Neutral, and Negative review insights
+
+6. AI Admin Dashboard
+
+* Sales Forecasting
+* Inventory Prediction
+* Best Selling Product Analysis
+* Customer Behavior Analytics
+
+Database Tables:
+
+Users
+Products
+Categories
+Cart
+CartItems
+Orders
+OrderItems
+Payments
+Reviews
+Inventory
+Notifications
+ChatbotLogs
+
+API Modules:
+
+/api/auth
+/api/products
+/api/categories
+/api/cart
+/api/orders
+/api/payments
+/api/reviews
+/api/notifications
+/api/chatbot
+/api/admin
+
+Architecture Flow:
+
+Customer/Admin
+↓
+React Frontend
+↓
+HTTPS
+↓
+AWS EC2
+(Java Spring Boot Backend)
+↓
+JWT Authentication
+↓
+REST APIs
+↓
+AWS RDS (MySQL)
+
+Spring Boot Backend
+↓
+AWS S3
+(Product Images, Invoices, Reports)
+
+Spring Boot Backend
+↓
+AWS SNS
+(Notifications)
+
+AI Chatbot Service
+↓
+OpenAI API or AWS Bedrock
+
+Generate:
+
+* Complete Database Schema
+* Entity Classes
+* Repository Layer
+* Service Layer
+* Controller Layer
+* JWT Security Configuration
+* AWS S3 Integration
+* AWS SNS Integration
+* React Frontend Components
+* Admin Dashboard
+* AI Chatbot Integration
+* Deployment Guide for AWS EC2
+* API Documentation
+* UML Diagrams
+* ER Diagram
+* System Architecture Diagram
+* Production-Ready Source Code
