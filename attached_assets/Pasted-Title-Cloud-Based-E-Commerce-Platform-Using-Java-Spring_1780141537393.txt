@@ -1,0 +1,85 @@
+Title: Cloud-Based E-Commerce Platform Using Java Spring Boot, AWS Cloud Services, and AI Chatbot
+
+Design a modern cloud-based e-commerce platform that enables customers to browse products, search items, manage shopping carts, place orders, make secure payments, and receive real-time notifications. The backend should be developed using Java Spring Boot with RESTful APIs and JWT authentication for security.
+
+After a customer logs into the website and starts browsing or searching for products, an AI-powered chatbot should appear as a floating widget at the bottom-right corner of every page. The chatbot assists customers by answering product-related questions, recommending products based on user interests, helping with order tracking, explaining return policies, and providing instant customer support.
+
+The application should be deployed on AWS EC2 and use AWS RDS (MySQL) as the primary database for storing users, products, orders, inventory, payments, and chatbot interaction logs. Product images, invoices, reports, and documents should be stored in AWS S3 cloud storage. AWS SNS should be integrated for sending order confirmations, shipping updates, delivery notifications, and low-stock alerts.
+
+Include the following modules:
+
+• User Management (Customer and Admin)
+• Product Management
+• Product Search and Filtering
+• AI Chatbot Assistant
+• Shopping Cart
+• Order Management
+• Payment Processing
+• Inventory Management
+• Notification Service
+• Admin Dashboard
+
+AI Chatbot Features:
+
+• Floating chatbot icon at the bottom-right corner of the website
+• Product recommendations based on customer searches
+• Intelligent product comparison
+• Order tracking assistance
+• Return and refund support
+• Frequently Asked Questions (FAQ)
+• 24/7 customer support
+• Personalized shopping suggestions
+• Chat history storage in database
+• Integration with OpenAI API or AWS Bedrock
+
+Architecture Flow:
+
+Customer/Admin
+↓
+HTTPS Request
+↓
+AWS EC2
+(Spring Boot Application)
+↓
+──────────────────────────
+│ REST APIs              │
+│ JWT Authentication     │
+│ Product Search Engine  │
+│ AI Chatbot Service     │
+──────────────────────────
+↓
+AWS RDS (MySQL)
+↓
+Users
+Products
+Orders
+Inventory
+Payments
+Chatbot Logs
+
+Spring Boot Application
+↓
+AWS S3
+(Product Images, Invoices, Reports)
+
+Spring Boot Application
+↓
+AWS SNS
+(Order Confirmation, Delivery Updates, Low Stock Alerts)
+
+Technical Stack:
+
+• Java 17
+• Spring Boot
+• Spring Security (JWT)
+• Spring Data JPA
+• Hibernate
+• AWS EC2
+• AWS RDS (MySQL)
+• AWS S3
+• AWS SNS
+• OpenAI API or AWS Bedrock
+• Maven
+• REST APIs
+
+Generate a professional UML Deployment Diagram, UML Component Diagram, Use Case Diagram, Data Flow Diagram (DFD), ER Diagram, Sequence Diagram, and AWS Cloud Architecture Diagram showing all interactions among customers, administrators, Spring Boot services, AI chatbot service, cloud storage, database, and notification services. Use enterprise-grade AWS architecture icons and UML notation suitable for a final-year engineering major project presentation and report.

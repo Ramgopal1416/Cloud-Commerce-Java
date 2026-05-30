@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "E-Commerce Platform Diagrams"
+version = "1.0.0"
+id = "artifacts/ecommerce-diagrams"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22293
+
+[services.development]
+run = "pnpm --filter @workspace/ecommerce-diagrams run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ecommerce-diagrams", "run", "build" ]
+publicDir = "artifacts/ecommerce-diagrams/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22293"
+BASE_PATH = "/"
