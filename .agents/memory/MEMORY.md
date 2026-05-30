@@ -1,0 +1,3 @@
+- [CSS Google Fonts import order](css-font-import.md) — `@import url(...)` must be the FIRST line of index.css, before `@import "tailwindcss"`, or PostCSS fails silently
+- [api-client-react deep imports](api-client-deep-imports.md) — never import from `@workspace/api-client-react/src/*`; only the barrel export `.` is listed in package.json exports
+- [payment method enum constraint](payment-method-enum.md) — orders table paymentMethod is a pg enum (STRIPE/RAZORPAY/COD); free-text values must be mapped to a valid enum value before insert
