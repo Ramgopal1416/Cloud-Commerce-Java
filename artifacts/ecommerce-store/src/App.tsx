@@ -17,6 +17,7 @@ import OrderDetail from "@/pages/orders/[id]";
 import Account from "@/pages/account";
 import Notifications from "@/pages/notifications";
 import Chat from "@/pages/chat";
+import Collections from "@/pages/collections";
 import Admin from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 
@@ -40,6 +41,7 @@ function Router() {
           <Route path="/account" component={Account} />
           <Route path="/notifications" component={Notifications} />
           <Route path="/chat" component={Chat} />
+          <Route path="/collections" component={Collections} />
           <Route path="/admin" component={Admin} />
           <Route component={NotFound} />
         </Switch>

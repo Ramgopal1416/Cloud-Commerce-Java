@@ -5,10 +5,12 @@
  * AI-Powered E-Commerce Platform API
  * OpenAPI spec version: 0.1.0
  */
+import type { Product } from './product';
 
 export interface ChatbotResponse {
   response: string;
   sessionId: string;
   /** @nullable */
   intent?: string | null;
+  products?: Product[];
 }

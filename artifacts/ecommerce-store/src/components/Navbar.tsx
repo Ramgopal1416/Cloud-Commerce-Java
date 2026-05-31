@@ -30,7 +30,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-6">
             {navLink("/products?sort=newest", "New Arrivals")}
             {navLink("/products?featured=true", "Featured")}
-            {navLink("/products?view=collections", "Collections")}
+            {navLink("/collections", "Collections")}
           </nav>
         </div>
 

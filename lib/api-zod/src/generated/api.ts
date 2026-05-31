@@ -623,7 +623,24 @@ export const ChatbotMessageBody = zod.object({
 export const ChatbotMessageResponse = zod.object({
   "response": zod.string(),
   "sessionId": zod.string(),
-  "intent": zod.string().nullish()
+  "intent": zod.string().nullish(),
+  "products": zod.array(zod.object({
+  "id": zod.number(),
+  "name": zod.string(),
+  "description": zod.string().nullish(),
+  "price": zod.string(),
+  "comparePrice": zod.string().nullish(),
+  "categoryId": zod.number(),
+  "brand": zod.string().nullish(),
+  "imageUrl": zod.string().nullish(),
+  "images": zod.array(zod.string()).nullish(),
+  "sku": zod.string().nullish(),
+  "isActive": zod.boolean(),
+  "isFeatured": zod.boolean(),
+  "rating": zod.string().nullish(),
+  "reviewCount": zod.number(),
+  "createdAt": zod.coerce.date()
+})).optional()
 })
 
 

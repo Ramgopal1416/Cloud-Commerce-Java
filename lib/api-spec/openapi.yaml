@@ -1329,6 +1329,10 @@ components:
           type: string
         intent:
           type: ["string", "null"]
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/Product"
 
     ChatbotLog:
       type: object

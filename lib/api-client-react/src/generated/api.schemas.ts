@@ -306,6 +306,7 @@ export interface ChatbotResponse {
   sessionId: string;
   /** @nullable */
   intent?: string | null;
+  products?: Product[];
 }
 
 export interface ChatbotLog {

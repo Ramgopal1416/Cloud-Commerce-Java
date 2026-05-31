@@ -13,10 +13,14 @@ export default function Products() {
   const featured = searchParams.get("featured") === "true";
   const sortNewest = searchParams.get("sort") === "newest";
   const isCollections = searchParams.get("view") === "collections";
+  const urlCategoryId = searchParams.get("categoryId") ? Number(searchParams.get("categoryId")) : undefined;
+
+  // URL category param overrides sidebar selection
+  const effectiveCategoryId = urlCategoryId ?? categoryId;
 
   const { data: productsData, isLoading: isLoadingProducts } = useListProducts({
     search: search || undefined,
-    categoryId,
+    categoryId: effectiveCategoryId,
     featured: featured ? true : undefined,
     limit: 100,
   });
@@ -88,7 +92,7 @@ export default function Products() {
                   key={cat.id}
                   onClick={() => setCategoryId(cat.id)}
                   className={`text-left text-sm py-1 transition-colors ${
-                    categoryId === cat.id
+                    effectiveCategoryId === cat.id
                       ? "text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
