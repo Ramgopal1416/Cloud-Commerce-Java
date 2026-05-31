@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useGetAdminStats, useListAllOrders, useListAllUsers, useListLowStock } from "@workspace/api-client-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLocation } from "wouter";
@@ -6,13 +7,14 @@ import { Users, ShoppingCart, Package, DollarSign, AlertTriangle } from "lucide-
 import { format } from "date-fns";
 
 export default function Admin() {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const [, setLocation] = useLocation();
 
-  if (user && user.role !== "ADMIN") {
-    setLocation("/");
-    return null;
-  }
+  useEffect(() => {
+    if (!isLoading && user && user.role !== "ADMIN") {
+      setLocation("/");
+    }
+  }, [user, isLoading, setLocation]);
 
   const { data: stats } = useGetAdminStats();
   const { data: recentOrders } = useListAllOrders({ page: 1 });

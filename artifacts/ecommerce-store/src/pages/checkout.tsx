@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -33,6 +34,12 @@ export default function Checkout() {
 
   const { data: cart, isLoading: isCartLoading } = useGetCart();
   const createOrderMutation = useCreateOrder();
+
+  useEffect(() => {
+    if (!isCartLoading && (!cart?.items || cart.items.length === 0)) {
+      setLocation("/cart");
+    }
+  }, [cart, isCartLoading, setLocation]);
 
   const form = useForm<CheckoutForm>({
     resolver: zodResolver(checkoutSchema),
@@ -75,8 +82,7 @@ export default function Checkout() {
     return <div className="flex-1 flex items-center justify-center"><p className="font-serif italic text-muted-foreground">Loading checkout...</p></div>;
   }
 
-  if (!cart?.items || cart.items.length === 0) {
-    setLocation("/cart");
+  if (!isCartLoading && (!cart?.items || cart.items.length === 0)) {
     return null;
   }
 
@@ -150,15 +156,15 @@ export default function Checkout() {
                 {form.watch("paymentMethod") === "credit_card" && (
                   <div className="grid grid-cols-2 gap-4 p-4 border bg-muted/30">
                     <div className="col-span-2">
-                      <FormLabel className="text-xs uppercase tracking-widest mb-2 block">Card Number</FormLabel>
+                      <label className="text-xs uppercase tracking-widest mb-2 block text-foreground font-medium">Card Number</label>
                       <Input placeholder="0000 0000 0000 0000" className="rounded-none bg-background" />
                     </div>
                     <div>
-                      <FormLabel className="text-xs uppercase tracking-widest mb-2 block">Expiry</FormLabel>
+                      <label className="text-xs uppercase tracking-widest mb-2 block text-foreground font-medium">Expiry</label>
                       <Input placeholder="MM/YY" className="rounded-none bg-background" />
                     </div>
                     <div>
-                      <FormLabel className="text-xs uppercase tracking-widest mb-2 block">CVC</FormLabel>
+                      <label className="text-xs uppercase tracking-widest mb-2 block text-foreground font-medium">CVC</label>
                       <Input placeholder="123" className="rounded-none bg-background" />
                     </div>
                   </div>
