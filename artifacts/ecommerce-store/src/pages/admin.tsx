@@ -9,7 +9,7 @@ export default function Admin() {
   const { user } = useAuth();
   const [, setLocation] = useLocation();
 
-  if (user && user.role !== "admin") {
+  if (user && user.role !== "ADMIN") {
     setLocation("/");
     return null;
   }
