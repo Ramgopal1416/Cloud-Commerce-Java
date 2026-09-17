@@ -13,7 +13,7 @@ export default function OrderDetail() {
   const queryClient = useQueryClient();
 
   const { data: order, isLoading } = useGetOrder(orderId, {
-    query: { enabled: !!orderId }
+    query: { enabled: !!orderId, queryKey: getGetOrderQueryKey(orderId) }
   });
 
   const cancelMutation = useCancelOrder();

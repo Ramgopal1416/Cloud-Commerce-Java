@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useParams } from "wouter";
-import { useGetProduct, useListProductReviews, useAddToCart, getGetCartQueryKey } from "@workspace/api-client-react";
+import { useGetProduct, useListProductReviews, useAddToCart, getGetCartQueryKey, getGetProductQueryKey, getListProductReviewsQueryKey } from "@workspace/api-client-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
@@ -22,12 +22,14 @@ export default function ProductDetail() {
   const { data: product, isLoading } = useGetProduct(productId, {
     query: {
       enabled: !!productId,
+      queryKey: getGetProductQueryKey(productId),
     }
   });
 
   const { data: reviewsResponse } = useListProductReviews(productId, {
     query: {
       enabled: !!productId,
+      queryKey: getListProductReviewsQueryKey(productId),
     }
   });
 

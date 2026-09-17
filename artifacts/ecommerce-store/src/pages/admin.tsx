@@ -79,7 +79,7 @@ export default function Admin() {
         <div className="space-y-6">
           <h2 className="text-2xl font-serif border-b pb-2">Recent Orders</h2>
           <div className="space-y-4">
-            {recentOrders?.items?.slice(0, 5).map((order) => (
+            {recentOrders?.slice(0, 5).map((order) => (
               <div key={order.id} className="p-4 border border-border/50 flex justify-between items-center bg-muted/10">
                 <div>
                   <div className="font-medium">Order #{order.id}</div>

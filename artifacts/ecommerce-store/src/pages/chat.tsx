@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
-import { useChatbotMessage, useGetChatbotHistory } from "@workspace/api-client-react";
+import { useChatbotMessage, useGetChatbotHistory, getGetChatbotHistoryQueryKey } from "@workspace/api-client-react";
 import type { Product } from "@workspace/api-client-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -78,7 +78,7 @@ export default function Chat() {
 
   const { data: _history } = useGetChatbotHistory(
     { sessionId },
-    { query: { enabled: false } }
+    { query: { enabled: false, queryKey: getGetChatbotHistoryQueryKey({ sessionId }) } }
   );
 
   useEffect(() => {

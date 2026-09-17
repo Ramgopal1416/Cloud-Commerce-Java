@@ -4,8 +4,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 import Home from "@/pages/home";
+import About from "@/pages/about";
+import Services from "@/pages/services";
+import Features from "@/pages/features";
+import Testimonials from "@/pages/testimonials";
+import Contact from "@/pages/contact";
 import Login from "@/pages/login";
 import Register from "@/pages/register";
 import Products from "@/pages/products/index";
@@ -30,6 +36,11 @@ function Router() {
       <main className="flex-1 flex flex-col">
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
+          <Route path="/features" component={Features} />
+          <Route path="/testimonials" component={Testimonials} />
+          <Route path="/contact" component={Contact} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/products" component={Products} />
@@ -46,13 +57,7 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      <footer className="border-t py-12 md:py-16 mt-auto bg-background">
-        <div className="container px-4 md:px-8 text-center text-sm text-muted-foreground space-y-4">
-          <p className="font-serif text-2xl text-foreground uppercase tracking-tighter">ShopAI</p>
-          <p className="font-light">Luxury commerce, curated by intelligence.</p>
-          <p className="text-xs">&copy; {new Date().getFullYear()} ShopAI. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

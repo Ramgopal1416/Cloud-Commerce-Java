@@ -2,22 +2,25 @@ import { useListCategories, useListProducts } from "@workspace/api-client-react"
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
+const EDITORIAL_STUDIO_IMAGE = "/store/attached_assets/generated_images/shopai-curation-studio.png";
+const EDITORIAL_STILL_LIFE = "/store/attached_assets/generated_images/shopai-editorial-still-life.png";
+
 const CATEGORY_IMAGES: Record<string, string> = {
-  "Electronics": "https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=2070&auto=format&fit=crop",
-  "Clothing": "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop",
-  "Home & Garden": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070&auto=format&fit=crop",
-  "Sports & Fitness": "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=2031&auto=format&fit=crop",
-  "Books": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2028&auto=format&fit=crop",
-  "Bags & Accessories": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2069&auto=format&fit=crop",
-  "Personal Care": "https://images.unsplash.com/photo-1607008829749-c0f284a49fc4?q=80&w=1887&auto=format&fit=crop",
-  "Footwear": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop",
-  "Groceries & Kitchen": "https://images.unsplash.com/photo-1506484381205-f7945653044d?q=80&w=2070&auto=format&fit=crop",
+  "Electronics": EDITORIAL_STUDIO_IMAGE,
+  "Clothing": EDITORIAL_STILL_LIFE,
+  "Home & Garden": EDITORIAL_STUDIO_IMAGE,
+  "Sports & Fitness": EDITORIAL_STILL_LIFE,
+  "Books": EDITORIAL_STUDIO_IMAGE,
+  "Bags & Accessories": EDITORIAL_STILL_LIFE,
+  "Personal Care": EDITORIAL_STUDIO_IMAGE,
+  "Footwear": EDITORIAL_STILL_LIFE,
+  "Groceries & Kitchen": EDITORIAL_STUDIO_IMAGE,
 };
 
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   "Electronics": "Cutting-edge gadgets and tech essentials",
   "Clothing": "Curated fashion for every occasion",
-  "Home & Garden": "Elevate your living space",
+  "Home & Garden": "Make room for living",
   "Sports & Fitness": "Performance gear for every athlete",
   "Books": "Stories and wisdom worth reading",
   "Bags & Accessories": "The finishing touches that define your style",
@@ -123,7 +126,7 @@ function CategoryCard({
   aspect: string;
   large?: boolean;
 }) {
-  const image = CATEGORY_IMAGES[cat.name] ?? "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop";
+  const image = CATEGORY_IMAGES[cat.name] ?? EDITORIAL_STILL_LIFE;
   const desc = CATEGORY_DESCRIPTIONS[cat.name] ?? "Explore the collection";
 
   return (
